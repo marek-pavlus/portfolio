@@ -38,6 +38,7 @@ html, body {
 /* nav buttons */
 button {
     background-color: aqua;
+    color: rgb(14, 39, 60);
     text-align: center;
     gap: 20px;
     flex-wrap: nowrap;
