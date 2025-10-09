@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+/* animation "fade in" */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: rgb(14, 39, 60);
+    color: white;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    padding: 10px;
+    height: 100%;
+}
+/* top */
+.div1 {
+    display: flex;
+    justify-content: space-between;
+    grid-column: span 5 / span 5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* VIA logo image */
+img {
+    width: auto;
+    height: 100px;
+}
+/* VIA logo link*/
+.div1 a {
+    justify-content: right;
+    display: flex;
+    cursor: pointer;
+    width: auto;
+    height: 100px;
+}
+
+/* nav buttons */
+button {
+    background-color: aqua;
+    color: rgb(14, 39, 60);
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* h1 text general */
+h1 {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+h1:hover {
+    color: aqua;
+    cursor: default;
+}
+
+/* top h1 text (NOT USING) 
+.div1 h1 {
+    font-size: 40px;
+    color: white;
+    font-family:'Courier New', Courier, monospace;
+}
+*/
+
+/* left side */
+.div2 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-row-start: 2;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 500px;
+}
+
+/* right side */
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-row-start: 2;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 500px;
+    padding-bottom: 70px;
+}
+
+/* buttons . middle */
+.buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+}
+.buttons a {
+      padding: 12px 25px;
+      height: 40px;
+      color: rgb(14, 39, 60);
+      background-color: aqua;
+      border-radius: 5px;
+      transition: 0.3s ease-in-out;
+      text-decoration: none;
+      font-weight: 500;
+}
+.buttons a:hover {
+      background-color: white;
+}
+
+/* h5 text general */
+h5 {
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    cursor: default;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* bottom */
+.div4 {
+    grid-column: span 5 / span 5;
+    grid-row-start: 5;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+/* icon buttons */
+svg {
+    width: 24px;
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+}
+svg:hover {
+    opacity: 1;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    color: white;
+    grid-column: span 5;
+    opacity: 0.5;
+}
+
+/* --- TABLET --- */
+@media (max-width: 1280px) {
+  .parent {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    height: 100%;
+    display: grid;
+  }
+
+  .div1 {
+    grid-column: span 4;
+  }
+
+  img {
+    width: 280px;
+    height: auto;
+  }
+
+  .div2, .div3 {
+    grid-column: span 1;
+    text-align: center;
+    margin-block: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .div4 {
+    grid-column: 1 / -1;
+    gap: 100px;
+  }
+}
+
+/* --- MOBILE --- */
+@media (max-width: 700px) {
+  .parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+  }
+
+  .div1 {
+    display: grid;
+    order: 1;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  img {
+    padding-top: 35px;
+    width: 180px;
+    margin: 0 auto;
+  }
+
+  .div2 {
+    order: 3;
+    text-align: center;
+  }
+
+  .div3 {
+    order: 2;
+    text-align: center;
+    height: 560px;
+  }
+
+  .div4 {
+    order: 2;
+    gap: 35px;
+  }
+
+  footer {
+    order: 6;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .buttons a {
+    padding: 10px 20px;
+  }
+}
